@@ -1,0 +1,205 @@
+
+body {
+  font-family: Source Sans Pro;
+  background-color: #071629;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-image: url(images/pic_1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+@media screen and (max-width: 550px) {
+  header {
+  background-image: url(images/pic_1.jpg);
+  background-position: -90vmin;
+  background-size: cover;
+  background-repeat: no-repeat;
+  zoom: -5;
+  }
+}
+
+
+.text-responsive {
+  font-size: 10vw;
+}
+
+.purple-bg {
+  background-color: #c271ff;
+}
+
+.purple-text {
+  color: #c271ff;
+}
+
+
+.font-purple-text {
+  font-size: 32px;
+}
+
+.font-names {
+  font-size: 18px;
+}
+
+
+.get {
+  margin-top: 90px;
+}
+
+
+.piece {
+  margin-top: 320px;
+}
+
+.Carousel {
+  height: 392px;
+  background-color: #C271FF;
+}
+
+.carousel-img {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 250px;
+
+}
+
+.quotes-text {
+  position: relative;
+  margin-top: 120px;
+}
+
+.arrow {
+  margin-top: 100px;
+
+}
+
+.carousel-font {
+  font-size: 22px;
+}
+
+/* Centered play img */
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[class^='holberton_school-icon-ic'] {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.pricing {
+  background-image: url(images/pic_2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+@media screen and (max-width: 550px) {
+  .pricing {
+  background-image: url(images/pic_2.jpg);
+  background-position: -90vmin;
+  background-size: cover;
+  background-repeat: no-repeat;
+  zoom: -5;
+  }
+}
+
+.act {
+  border-bottom: 3px solid #FFFFFF;
+  border-width: 4px;
+  border-radius: 1.5px;
+}
+
+.logo {
+  font-size: 40px;
+}
+
+.go {
+  font-size: 60px;
+}
+
+.holberton_school-icon-check {
+  font-size: 30px;
+  color: #80c456;
+}
+
+.gray-bg {
+  background-color: #979797;
+}
+
+.prince-font {
+  font-size: 44px;
+}
+
+.prince-font2 {
+  font-size: 12px;
+}
+
+.text-font {
+  font-size: 18px;
+}
+
+.container h1 {
+  font-family: 'Source Sans Pro';
+  font-size: 60px;
+}
+
+.gray-text {
+  color: gray;
+}
+
+.courses {
+  background-image: url(images/pic_3.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+@media screen and (max-width: 550px) {
+  .courses {
+  background-image: url(images/pic_3.jpg);
+  background-position: -90vmin;
+  background-size: cover;
+  background-repeat: no-repeat;
+  zoom: -5;
+  }
+}
+
+.subtitles{
+  font-family: 'Coiny', cursive;
+}
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #C271FF;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card {
+  width: 17.5rem;
+}
+
+.play_img{
+  margin-top: 45px;
+}
