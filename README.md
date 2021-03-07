@@ -33,7 +33,7 @@ In the scratch we use a Figma file with all the images of the webpage to replica
 |1- **homepage.html , styles.css**||
 |2- **1-homepage.html, styles.css**| |
 |3- **2-homepage.html, styles.css**| |
-|4- **0-pricing.html, styles.css**| |
+|4- **pricing.html, styles.css**| |
 |5- **courses.html, styles.css**|  |
 |0- **script.js**| JavaScript File|
 
