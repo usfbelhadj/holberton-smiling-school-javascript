@@ -159,9 +159,42 @@ $(document).ready(function () {
                 });
             }
         });
+        $(function quotes_pricing() {
+            $('#loader').show();
+            $.ajax({
+                type: 'GET',
+                url: "https://smileschool-api.hbtn.info/quotes",
+                success: (quotes) => {
+                    $('#loader').hide()
+                    quotes.forEach(element => {
+                        var id_active = ''
+                        if (element.id === 1) {
+                            id_active = "active"
+                        }
+                        $('#inner-caros_pricing').append(`<div class="carousel-item ${id_active}">
+                    <div class="row justify-content-around">
+                        <div class="col-sm-1">
+                            <img class="rounded-circle mx-auto m-3 d-block" src="${element.pic_url}" width="150"
+                                height="150">
+                        </div>
+                        <div class="col-sm-5 mx-3">
+                            <p>${element.text}</p>
+                            <p><span class="font-weight-bold">${element.name}</span><br>
+                                <span class="font-italic">${element.title}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+                        )
+
+                    });
+                }
+            });
+        });
     });
     quotes();
     popular_tutorials();
     latest_videos();
+    quotes_pricing();
 
 });
