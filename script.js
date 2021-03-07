@@ -32,57 +32,78 @@ $(document).ready(function () {
         });
     });
 
+    function joinCards(id) {
+        $(`#${id} .carousel-item`).each(function () {
+            let minPerSlide = 3;
+            let next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(":first");
+            }
+            next.children(":first-child").clone().appendTo($(this));
+
+            for (let i = 0; i < minPerSlide; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(":first");
+                }
+
+                next.children(":first-child").clone().appendTo($(this));
+            }
+        });
+    }
     $(function popular_tutorials() {
-        $('#loader').show();
+        $('#loader_vid').show();
         $.ajax({
             type: 'GET',
             url: "https://smileschool-api.hbtn.info/popular-tutorials",
-            success: (quotes) => {
-                $('#loader').hide()
-                quotes.forEach(element, (i, element) => {
+            success: (videos) => {
+                videos.forEach(element => {
+                    var act = ''
+                    if (element.id > 1) {
+                        act = "active"
+                    }
+                    $('#loader_vid').hide();
                     $('#inner-card').append(`
-                    <div class="carousel-item justify-content-center ${i} ">
-                        
-                    <div class="card ">
-                        <div class="card style="width: 18rem;">
-                            <img src=" ${element.thumb_url}" width="280px" height="150px">
-                            <div class="centered play_img"><img src="images/play.png">
-                            </div>
+                    <div class="carousel-item  d-flex justify-content-space-between ${act}">
+
+                    <div class="carousel-item ">
+                    <d class="col-md-3">
+                        <div class="card card-body">
+                        <img src=" ${element.thumb_url}" height="150px">
+                        <div class="centered"><img src="images/play.png" width="64px" height="64px">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text font-weight-bold">${element.title}</p>
-                            <p class="card-text font-weight-light text-muted">${element["sub-title"]}</p>
-                            <p class="purple-text"><img class="rounded-circle mr-3"
-                                    src="${element.author_pic_url}" width="30px" height="30px">${element.author}</p>
+                        <p class="card-text font-weight-bold">${element.title}</p>
+                        <p class="card-text font-weight-light text-muted">${element["sub-title"]}</p>
+                        <p class="purple-text"><img class="rounded-circle mr-3"
+                                src="${element.author_pic_url}" width="30px" height="30px">${element.author}</p>
                         </div>
                         <div class="row justify-content-between mb-3">
-                            <div class="col">
-                                <img src="images/star_on.png" width="15px" height="15px" alt=""
-                                    loading="lazy">
-                                <img src="images/star_on.png" width="15px" height="15px" alt=""
-                                    loading="lazy">
-                                <img src="images/star_on.png" width="15px" height="15px" alt=""
-                                    loading="lazy">
-                                <img src="images/star_on.png" width="15px" height="15px" alt=""
-                                    loading="lazy">
-                                <img src="images/star_off.png" width="15px" height="15px" alt=""
-                                    loading="lazy">
-                            </div>
-                            <div class="col-4 text-right purple-text">
-                            ${element.duration}
-                            </div>
+                        <div class="col">
+                            <img src="images/star_on.png" width="15px" height="15px" alt=""
+                                loading="lazy">
+                            <img src="images/star_on.png" width="15px" height="15px" alt=""
+                                loading="lazy">
+                            <img src="images/star_on.png" width="15px" height="15px" alt=""
+                                loading="lazy">
+                            <img src="images/star_on.png" width="15px" height="15px" alt=""
+                                loading="lazy">
+                            <img src="images/star_off.png" width="15px" height="15px" alt=""
+                                loading="lazy">
                         </div>
                     </div>
-                </div>
-                </div>`
+                                    
+                                        <div class="col-4 text-right purple-text">
+                                            ${element.duration}
+                                        </div>
+                                    </div>
+                                </div>`
                     )
 
+
+                    joinCards("card_inner")
                 });
             }
         });
     });
-
-
-    test();
 
 });
